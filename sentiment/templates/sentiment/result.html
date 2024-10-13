@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review Result</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'sentiment/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Review Result</h1>
+        <p><strong>Your review:</strong> {{ review }}</p>
+
+        <p><strong>Sentiment:</strong>
+            {% if sentiment == "Positive" %}
+                <span class="sentiment positive">Positive</span>
+            {% else %}
+                <span class="sentiment negative">Negative</span>
+            {% endif %}
+        </p>
+
+
+        <p><strong>Rating:</strong>
+            {% for i in star_range %}
+                <span class="star {% if i <= rating %}filled{% endif %}">&#9733;</span>
+            {% endfor %}
+        </p>
+
+        <a href="{% url 'sentiment:index' %}" class="btn">Rate Another Review</a>
+    </div>
+</body>
+</html>

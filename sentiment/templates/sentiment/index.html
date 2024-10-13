@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Review Rating</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'sentiment/styles.css' %}">
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const form = document.querySelector('form');
+            const submitButton = document.querySelector('button[type="submit"]');
+            submitButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                form.submit();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Rate Your Movie Review</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="review" class="review-label">Enter your movie review below:</label>
+            {{ form.review }}
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
