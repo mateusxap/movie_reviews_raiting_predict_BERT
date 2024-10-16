@@ -33,3 +33,6 @@ cd movie_reviews_raiting_predict_BERT
 python3 manage.py runserver
 ```
 Теперь вы можете открыть браузер и перейти по адресу http://127.0.0.1:8000/, чтобы увидеть работающее приложение.
+
+
+Если по какой-то причине невозможно скачать файл модели через git lfs, то его можно скачать по ссылке https://disk.yandex.ru/d/9Fnt9sd3WTSRkQ и перенести все данные это папки в папку movie_reviews_raiting_predict_BERT/sentiment/bert_model
